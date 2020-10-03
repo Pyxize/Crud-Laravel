@@ -10,7 +10,7 @@ jobs:
       - name: git clone
         uses: actions/checkout@v2
       - name: install sqlite3
-        run: sudo apt install php-pdo-sqlite
+        run: sudo apt install php-pdo-sqlite -y
       - name: linter
         uses: michaelw90/PHP-lint@master
       - name: Security checker
