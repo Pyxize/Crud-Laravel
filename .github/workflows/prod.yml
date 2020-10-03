@@ -13,8 +13,8 @@ jobs:
         run: sudo apt-get install php7.3-sqlite -y
       - name: Install composer
         uses: php-actions/composer@v2
-          with:
-            command: composer update
+        with:
+          command: composer update
       - name: linter
         uses: michaelw90/PHP-lint@master
       - name: Security checker
