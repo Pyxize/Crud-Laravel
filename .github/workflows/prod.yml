@@ -13,10 +13,8 @@ jobs:
         uses: michaelw90/PHP-lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
-      - name: PHPstan
-        uses: docker://oskarstark/phpstan-ga
-        with:
-          args: analyse src/ --level=5
+      - name: Laravel PHP Insights
+        uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
         with:
