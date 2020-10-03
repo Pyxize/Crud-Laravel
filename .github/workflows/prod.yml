@@ -11,8 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: install sqlite3
         run: sudo apt-get install php7.3-sqlite -y
-      - name: grep sqlite
-        run: php -m | grep sqlite
+      - name: require sqlite
       - name: linter
         uses: michaelw90/PHP-lint@master
       - name: Security checker
@@ -25,3 +24,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_KEY_PROD}}
           heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
+      - name: Composer install
+          uses: docker://composer:1.9.1
+          with:
+            args: install
