@@ -25,6 +25,6 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
       - name: Composer install
-          uses: docker://composer:1.9.1
-          with:
-            args: install
+        uses: docker://composer:1.9.1
+        with:
+          args: install
