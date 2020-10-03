@@ -1,0 +1,25 @@
+name: Deploy prod to Heroku
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git clone
+        uses: actions/checkout@v2
+      - name: linter
+        uses: michaelw90/PHP-lint@master
+      - name: Security checker
+        uses: symfonycorp/security-checker-action@v2
+      - name: PHPstan
+        uses: docker://oskarstark/phpstan-ga
+        with:
+          args: analyse src/ --level=5
+      - name: Deploy heroku
+        uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_KEY_PROD}}
+          heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
