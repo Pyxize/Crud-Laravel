@@ -12,7 +12,7 @@ jobs:
       - name: install sqlite3
         run: sudo apt-get install php7.3-sqlite -y
       - name: composer update
-        run: composer update
+        run: sudo composer update
       - name: linter
         uses: michaelw90/PHP-lint@master
       - name: Security checker
