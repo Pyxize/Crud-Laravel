@@ -40,3 +40,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });
+route()
