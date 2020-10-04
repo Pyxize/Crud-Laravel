@@ -17,8 +17,8 @@ jobs:
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
       - name: Install composer dependencies
-         run: composer install --no-script
-     # - name: Laravel PHP Insights
+        run: composer install --no-script
+      # - name: Laravel PHP Insights
       #  uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
