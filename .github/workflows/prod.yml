@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: git clone
         uses: actions/checkout@v2
-      - name: install sqlite3
-        run: sudo apt-get install php7.3-sqlite -y
       - name: require sqlite
       - name: linter
         uses: michaelw90/PHP-lint@master
