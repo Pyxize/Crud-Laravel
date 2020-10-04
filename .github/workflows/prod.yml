@@ -15,6 +15,14 @@ jobs:
         uses: symfonycorp/security-checker-action@v2
       - name: PHPstan
         uses: docker://oskarstark/phpstan-ga
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        with:
+          environment: production
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
         with:
