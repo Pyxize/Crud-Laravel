@@ -16,6 +16,8 @@ jobs:
         uses: michaelw90/PHP-lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
+      - name: Install composer dependencies
+        run: composer install --no-script
      # - name: Laravel PHP Insights
       #  uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       - name: Deploy heroku
@@ -24,5 +26,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_KEY_PROD}}
           heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
-      - name: Install composer dependencies
-        run: composer install --no-script
