@@ -12,8 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
+<div class="md:flex container border p-4"></div>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
