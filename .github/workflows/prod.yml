@@ -12,7 +12,7 @@ jobs:
       - name: install sqlite3
         run: sudo apt-get install php7.3-sqlite -y
       - name: restart apache
-        run: sudo /etc/init.d/apache2 restart
+        run: sudo apachectl restart
       - name: linter
         uses: michaelw90/PHP-lint@master
       - name: Security checker
