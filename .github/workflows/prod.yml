@@ -10,11 +10,7 @@ jobs:
       - name: git clone
         uses: actions/checkout@v2
       - name: install sqlite3
-        run: sudo apt-get install php7.3-sqlite -y
-      - name: stop
-        run: sudo service apache2 stop
-      - name: restart
-        run: sudo service apache2 restart
+        run: sudo apt-get install php7.3-sqlite3 -y
       - name: Install Dependencies (PHP vendors)
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
       - name: Create DB and schemas
