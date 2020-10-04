@@ -18,10 +18,10 @@ jobs:
           mkdir -p database
           touch database/database.sqlite
           php artisan migrate
-      - name: linter
-        uses: michaelw90/PHP-lint@master
-     # - name: Security checker
-      #  uses: symfonycorp/security-checker-action@v2
+     # - name: linter
+      #  uses: michaelw90/PHP-lint@master
+      - name: Security checker
+        uses: symfonycorp/security-checker-action@v2
       # - name: Laravel PHP Insights
       #  uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       - name: Deploy heroku
