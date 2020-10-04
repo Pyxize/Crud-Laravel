@@ -7,12 +7,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install composer dependencies
-        run: composer install --no-scripts
       - name: git clone
         uses: actions/checkout@v2
       - name: install sqlite3
         run: sudo apt-get install php7.3-sqlite -y
+      - name: Create Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
       - name: require sqlite
       - name: linter
         uses: michaelw90/PHP-lint@master
