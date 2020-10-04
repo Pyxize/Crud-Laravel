@@ -13,6 +13,8 @@ jobs:
         uses: michaelw90/PHP-lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
+      - name: composer update
+        run: composer update
       - name: Laravel PHP Insights
         uses: stefanzweifel/laravel-phpinsights-action@v1.1.1
       - name: Deploy heroku
