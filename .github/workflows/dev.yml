@@ -1,4 +1,4 @@
-name: Deploy prod to Heroku
+name: Deploy dev to Heroku
 on:
   push:
     branches:
