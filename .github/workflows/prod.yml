@@ -13,12 +13,8 @@ jobs:
         uses: michaelw90/PHP-lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
-      - name: install Tailwind css
-        run: npm install tailwindcss
-      - name: Tailwind config file
-        run: npx tailwindcss init
-      - name: npm install
-        run : npm install
+      - name: PHPstan
+          uses: docker://oskarstark/phpstan-ga
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
         with:
