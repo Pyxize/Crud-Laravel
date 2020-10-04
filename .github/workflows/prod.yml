@@ -9,17 +9,6 @@ jobs:
     steps:
       - name: git clone
         uses: actions/checkout@v2
-      - name: install sqlite3
-        run: sudo apt-get install php7.3-sqlite3 -y
-      - name: composer
-        run: composer install
-      - name: Install Dependencies (PHP vendors)
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-      - name: Create DB and schemas
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-          php artisan migrate
      # - name: linter
       #  uses: michaelw90/PHP-lint@master
       - name: Security checker
