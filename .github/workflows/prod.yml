@@ -25,5 +25,4 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
       - name: Install composer dependencies
-        run: |
-          composer install --no-script
+        run: composer install --no-script
