@@ -14,7 +14,7 @@ jobs:
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
       - name: PHPstan
-          uses: docker://oskarstark/phpstan-ga
+        uses: docker://oskarstark/phpstan-ga
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
         with:
