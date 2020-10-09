@@ -23,17 +23,3 @@ jobs:
             https://iim-a4-projet-laravel-preprod.herokuapp.com/
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
-        # - name: Create Sentry release
-        #uses: getsentry/action-release@v1
-        # env:
-        #  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-        #  SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-        #  SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-        # with:
-        #  environment: production
-      - name: Deploy heroku
-        uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_KEY_DEV}}
-          heroku_app_name: ${{secrets.HEROKU_APP_DEV}} #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL_DEV}}
