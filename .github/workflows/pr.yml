@@ -19,10 +19,10 @@ jobs:
       - name: PHPstan
         uses: docker://oskarstark/phpstan-ga
       - name: Lighthouse
-        uses: actions/setup-node@v1
-          run: npm install && npm install -g @lhci/cli@0.4.x
-          run: npm run build
-          run: lhci autorun
+      - uses: actions/setup-node@v1
+      - run: npm install && npm install -g @lhci/cli@0.4.x
+      - run: npm run build
+      - run: lhci autorun
      # - name: Create Sentry release
         #uses: getsentry/action-release@v1
        # env:
