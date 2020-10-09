@@ -26,6 +26,7 @@ jobs:
       - name: Deploy heroku
         uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_KEY_PROD}}
-          heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
+          heroku_api_key: ${{secrets.HEROKU_KEY_DEV}}
+          heroku_app_name: ${{secrets.HEROKU_APP_DEV}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL_DEV}}
+          branch: dev
