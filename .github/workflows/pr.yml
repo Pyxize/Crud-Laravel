@@ -1,6 +1,11 @@
-name: Deploy prod to Heroku
-on: pull_request
-
+name: Pull request
+on:
+  push:
+    branches:
+      - features/test
+  pull_request:
+    branches:
+      - features/test
 jobs:
   deploy:
     runs-on: ubuntu-latest
