@@ -19,8 +19,11 @@
 `lighthouse-ci-action` => Lighthouse est un outil d'audit de site Web automatisé.
  Il permet de diagnostiquer notre site pour améliorer l'expérience utilisateur 
  
- --
+---
 
+##### sur ma branche `features/test` je lance une pull request à ma branche dev (preprod)
+
+---
 **URL PRO ET PREPROD**
 
 `PROD` : http://iim-a4-projet-laravel-prod.herokuapp.com/
