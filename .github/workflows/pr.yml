@@ -1,11 +1,5 @@
-name: Deploy prod to Heroku
-on:
-  push:
-    branches:
-      - features/test
-  pull_request:
-    branches:
-      - dev
+name: Pull request
+on: [push, pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,17 +12,10 @@ jobs:
         uses: symfonycorp/security-checker-action@v2
       - name: PHPstan
         uses: docker://oskarstark/phpstan-ga
-      - name: Create Sentry release
-        uses: getsentry/action-release@v1
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v3
         with:
-          environment: production
-      - name: Deploy heroku
-        uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_KEY_PROD}}
-          heroku_app_name: ${{secrets.HEROKU_APP_PROD}} #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL_PROD}}
+          urls: |
+            https://iim-a4-projet-laravel-preprod.herokuapp.com/
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
